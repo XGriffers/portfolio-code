@@ -1,10 +1,9 @@
 import React from "react";
-import ReactDOM from 'react-dom';
 
 export default function Contact(){
-    const [name, setName] = React.useState("");
-    const [email, setEmail] = React.useState("");
-    const [message, setMessage] = React.useState("");
+    const [name] = React.useState("");
+    const [email] = React.useState("");
+    const [message] = React.useState("");
 
     const encode = (data) => {
         return Object.keys(data)
@@ -16,7 +15,7 @@ export default function Contact(){
         fetch("/", {
           method: "post",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact", ...this.state }),
+          body: encode({ "form-name": "contact", name, email, message}),
         })
         .then(() => alert("Message sent!"))
         .catch((error) => alert(error));
@@ -80,7 +79,7 @@ export default function Contact(){
             <input
               type="text"
               id="name"
-              name="name"
+              name= "name"
               className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               placeholder="Name"
             />
@@ -111,7 +110,7 @@ export default function Contact(){
             />
           </div>
           <button
-            type="submit"
+            type="submit" onSubmit={handleSubmit}
             className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
             Submit
           </button>
