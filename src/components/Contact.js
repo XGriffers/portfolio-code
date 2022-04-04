@@ -1,29 +1,29 @@
 import React from "react";
+import ReactDOM from 'react-dom';
+
 export default function Contact(){
     const [name, setName] = React.useState("");
     const [email, setEmail] = React.useState("");
     const [message, setMessage] = React.useState("");
 
-    function encode(data) {
+    const encode = (data) => {
         return Object.keys(data)
-          .map(
-            (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-          )
+          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
           .join("&");
       }
 
       function handleSubmit(e) {
-        e.preventDefault();
         fetch("/", {
           method: "post",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact", name, email, message }),
+          body: encode({ "form-name": "contact", ...this.state }),
         })
-          .then(() => alert("Message sent!"))
-          .catch((error) => alert(error));
+        .then(() => alert("Message sent!"))
+        .catch((error) => alert(error));
+        e.preventDefault();
       }
 
-    return(
+      return(
         <section id="contact" className="relative">
       <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
         <div className="lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
@@ -64,7 +64,7 @@ export default function Contact(){
         </div>
         <form
           netlify
-          name="contact" data-netlify="true" onSubmit="submit"
+          name="contact" data-netlify="true" onSubmit="post"
           className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
             <input type="hidden" name="form-name"value="contact"/>
           <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font">
@@ -119,4 +119,4 @@ export default function Contact(){
       </div>
     </section>
     );
-}
+  }
