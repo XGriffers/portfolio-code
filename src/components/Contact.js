@@ -1,9 +1,9 @@
 import React from "react";
 
 export default function Contact(){
-    const [name] = React.useState("");
-    const [email] = React.useState("");
-    const [message] = React.useState("");
+    const name = React.useState("");
+    const email = React.useState("");
+    const message = React.useState("");
 
     const encode = (data) => {
         return Object.keys(data)
@@ -15,7 +15,7 @@ export default function Contact(){
         fetch("/", {
           method: "post",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact", name, email, message}),
+          body: encode({}),
         })
         .then(() => alert("Message sent!"))
         .catch((error) => alert(error));
@@ -63,7 +63,7 @@ export default function Contact(){
         </div>
         <form
           netlify
-          name="contact" data-netlify="true" onSubmit="post"
+          name="contact" 
           className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
             <input type="hidden" name="form-name"value="contact"/>
           <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font">
@@ -110,7 +110,7 @@ export default function Contact(){
             />
           </div>
           <button
-            type="submit" onSubmit={handleSubmit}
+            type="submit"
             className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
             Submit
           </button>
