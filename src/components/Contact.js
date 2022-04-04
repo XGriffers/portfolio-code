@@ -1,9 +1,10 @@
 import React from "react";
 
 export default function Contact(){
-    const name = React.useState("");
-    const email = React.useState("");
-    const message = React.useState("");
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
+  
 
     const encode = (data) => {
         return Object.keys(data)
