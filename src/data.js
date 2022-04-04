@@ -27,8 +27,8 @@ export const projects = [
     title: "Epic Todo App",
     subtitle: "React Hooks",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-    image: "./Griffers React ToDo List.gif",
+      "An Awesome ToDo List app with the ability to add, edit, and remove tasks.",
+    image: "./project-4.gif",
     link: "https://xgrifferstodoreactapp.netlify.app/",
   },
 ];
