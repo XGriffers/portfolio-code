@@ -15,7 +15,7 @@ export default function Contact(){
         fetch("/", {
           method: "post",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({}),
+          body: encode({name, email, message}),
         })
         .then(() => alert("Message sent!"))
         .catch((error) => alert(error));
