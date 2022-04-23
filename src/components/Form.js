@@ -1,6 +1,29 @@
 import React from "react";
 
-export default function Form() {
+
+export default function Form(){
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
+  
+
+    const encode = (data) => {
+        return Object.keys(data)
+          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+          .join("&");
+      }
+
+      function handleSubmit(e) {
+        fetch("/", {
+          method: "post",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode({name, email, message}),
+        })
+        .then(() => alert("Message sent!"))
+        .catch((error) => alert(error));
+        e.preventDefault();
+      }
+  
     return (
             <section id="location" className="relative">
           <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
@@ -40,7 +63,7 @@ export default function Form() {
                 </div>
               </div>
             </div>
-            <form
+            <form onSubmit={handleSubmit}
               name="contact"
               method="post"
               className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
@@ -90,7 +113,7 @@ export default function Form() {
                   />
               </div>
               <button
-                type="submit"
+                type="submit" 
                 className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                 Submit
               </button>
