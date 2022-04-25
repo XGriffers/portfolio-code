@@ -27,7 +27,7 @@ export const projects = [
     title: "Epic Todo App",
     subtitle: "React Hooks",
     description:
-      "An Awesome ToDo List app with the ability to add, edit, and remove tasks.",
+      "An Awesome ToDo List app with the ability to add, edit, and remove tasks. Built in React.",
     image: "./project-4.gif",
     link: "https://xgrifferstodoreactapp.netlify.app/",
   },
