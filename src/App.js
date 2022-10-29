@@ -4,6 +4,10 @@ import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import ReactGA from "react-ga";
+
+const TRACKING_ID = "G-W8HTQLBY89";
+ReactGA.initialize(TRACKING_ID); 
 
 
 export default function App() {

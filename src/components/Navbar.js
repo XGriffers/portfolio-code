@@ -19,7 +19,7 @@ export default function Navbar(){
           </a>
         </nav>
         <a
-          href="#contact"
+          href="#contact" onClick={() => gaEventTracker('Contact us', 'Contact us button clicked')}
           className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
           Let's Build Something
           <ArrowRightIcon className="w-4 h-4 ml-1" />

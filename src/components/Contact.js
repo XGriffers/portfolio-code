@@ -1,7 +1,10 @@
 import React from "react";
 import { ChatIcon } from "@heroicons/react/solid";
+import useAnalyticsEventTracker from './useAnalyticsEventTracker';
+
 
 export default function Contact(){
+  const gaEventTracker = useAnalyticsEventTracker('Contact us');
       return(
         <section id="contact" className="relative">
           <div className="container px-5 py-10 mx-auto">
@@ -11,7 +14,7 @@ export default function Contact(){
             Let's Work Together
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-            Feel free to send me a message or an email about any proposals you might have.
+            Feel free to give me a call or send an email about any proposals you might have.
           </p>
        </div>
           <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">
@@ -19,8 +22,8 @@ export default function Contact(){
               <h2 className="title-font font-semibold text-white tracking-widest text-md">
                 EMAIL
               </h2>
-              <a className="text-indigo-400 leading-relaxed">
-                sgriff09@icloud.com</a>
+              <a href="mailto:sgriff09@icloud.com" onClick={() => gaEventTracker('email')} className="text-indigo-400 leading-relaxed" >
+                Click here to send me an email</a>
               
             </div>
               <div className="lg:w-1/2 px-10 mt-2 lg:mt-0">
