@@ -1,17 +1,17 @@
 export const projects = [
   {
-    title: "React Reserve",
+    title: "Social Media Clone",
     subtitle: "MERN Stack",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-    image: "./project-1.gif",
-    link: "",
+      "A really fun project I built as a social media clone, utilizing mongoDb, express, react, and node. I also used redux for state management, and json webtokens for authentication. The project link will take you to the github repo.",
+    image: "./MernProject.gif",
+    link: "https://github.com/XGriffers/SocialMediaAppV2",
   },
-  {
+  /* {
     title: "React Tracks",
     subtitle: "React and Python",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
+      "",
     image: "./project-2.gif",
     link: "",
   },
@@ -19,17 +19,17 @@ export const projects = [
     title: "DevChat",
     subtitle: "React and Firebase",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
+      "",
     image: "./project-3.gif",
     link: "",
-  },
+  }, */
   {
     title: "Epic Todo App",
     subtitle: "React Hooks",
     description:
-      "An Awesome ToDo List app with the ability to add, edit, and remove tasks. Built in React.",
+      "An Awesome ToDo List app with the ability to add, edit, and remove tasks. Built in React. Clicking the link will take you to the github repo where you can find a live demo.",
     image: "./project-4.gif",
-    link: "https://xgrifferstodoreactapp.netlify.app/",
+    link: "https://github.com/XGriffers/todo_app_react",
   },
 ];
 
